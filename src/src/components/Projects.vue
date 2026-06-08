@@ -25,7 +25,8 @@ import ContentSection from '../interfaces/ContentSection';
 import HoverBox from './HoverBox.vue';
 import showdown from 'showdown';
 import projectList from '../content/projects/projects.json';
-import type { EnrichedProject, Project } from '../interfaces/Project';
+import type Project from '../interfaces/Project';
+import type { EnrichedProject } from '../interfaces/Project';
 
 const projects = projectList as Project[];
 

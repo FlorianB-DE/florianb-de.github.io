@@ -2,6 +2,10 @@
 module.exports = {
 	theme: {
 		extend: {
+			fontFamily: {
+				display: ['Syne', 'system-ui', 'sans-serif'],
+				mono: ['JetBrains Mono', 'ui-monospace', 'monospace']
+			},
 			keyframes: {
 				'jet-in': {
 					'0%': {
