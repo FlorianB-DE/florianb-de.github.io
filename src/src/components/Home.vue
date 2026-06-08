@@ -1,14 +1,12 @@
 <template>
-	<section
-		id="home"
-		class="hero relative overflow-hidden"
-		data-heading="Home"
-		data-in_viewport=""
-	>
+	<section id="home" class="hero relative overflow-hidden" data-heading="Home" data-in_viewport="">
 		<div class="hero-bg" aria-hidden="true" />
 		<div class="hero-vignette" aria-hidden="true" />
 
-		<HoverBox class="profile-tag left-6 top-24 z-20 duration-700 lg:left-10 lg:top-28" data-in_viewport="fade-left">
+		<HoverBox
+			class="profile-tag top-24 left-6 z-20 duration-700 lg:top-28 lg:left-10"
+			data-in_viewport="fade-left"
+		>
 			<span class="no-select font-mono text-2xl tracking-tight lg:text-3xl">&lt;profile&gt;</span>
 		</HoverBox>
 
@@ -21,8 +19,8 @@
 					<span class="hero-title-line">code</span>
 				</h1>
 				<p class="hero-lead">
-					Procedural real-time graphics, open-source tooling, and full-stack engineering —
-					from Unreal material graphs to production web apps.
+					Procedural real-time graphics, open-source tooling, and full-stack engineering — from
+					Unreal material graphs to production web apps.
 				</p>
 				<a
 					class="hero-cta"
@@ -47,12 +45,7 @@
 						playsinline
 						preload="auto"
 					/>
-					<img
-						class="material-overlay"
-						:src="materialOverlaySrc"
-						alt=""
-						aria-hidden="true"
-					/>
+					<img class="material-overlay" :src="materialOverlaySrc" alt="" aria-hidden="true" />
 					<div class="star-frame-border" aria-hidden="true" />
 				</div>
 				<p class="star-caption">
@@ -164,7 +157,12 @@ onMounted(() => {
 }
 
 .hero-title-accent {
-	background: linear-gradient(105deg, var(--hero-warm) 0%, var(--accent-purple-light) 55%, #fff 100%);
+	background: linear-gradient(
+		105deg,
+		var(--hero-warm) 0%,
+		var(--accent-purple-light) 55%,
+		#fff 100%
+	);
 	-webkit-background-clip: text;
 	background-clip: text;
 	color: transparent;
@@ -187,7 +185,9 @@ onMounted(() => {
 	letter-spacing: 0.02em;
 	color: var(--accent-purple-light);
 	text-decoration: none;
-	transition: color 180ms ease, gap 180ms ease;
+	transition:
+		color 180ms ease,
+		gap 180ms ease;
 }
 
 .hero-cta:hover {

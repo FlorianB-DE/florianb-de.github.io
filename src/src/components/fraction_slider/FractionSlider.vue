@@ -16,49 +16,49 @@
 					@mouseenter="isHovered = true"
 					@mouseleave="onWrapperLeave"
 				>
-				<article class="slider-card preview-card relative w-full overflow-hidden">
-					<Transition name="preview-bubble" mode="out-in">
-						<div :key="previewProject.mdFile" class="absolute inset-0">
-							<img
-								:src="previewProject.imageUrl"
-								:alt="previewProject.title"
-								class="absolute inset-0 z-0 h-full w-full object-cover opacity-35"
-							/>
-							<div
-								class="preview-scrim absolute inset-0 z-[1] bg-gradient-to-t from-[#0f1419] via-[#0f1419]/75 to-[#0f1419]/20"
-							/>
-							<div class="relative z-10 flex h-full flex-col justify-end p-6 lg:p-8">
-								<p class="preview-label">Featured</p>
-								<h2 class="preview-title">{{ previewProject.title }}</h2>
-								<div class="card-content preview-body" v-html="previewProject.html" />
+					<article class="slider-card preview-card relative w-full overflow-hidden">
+						<Transition name="preview-bubble" mode="out-in">
+							<div :key="previewProject.mdFile" class="absolute inset-0">
+								<img
+									:src="previewProject.imageUrl"
+									:alt="previewProject.title"
+									class="absolute inset-0 z-0 h-full w-full object-cover opacity-35"
+								/>
+								<div
+									class="preview-scrim absolute inset-0 z-[1] bg-gradient-to-t from-[#0f1419] via-[#0f1419]/75 to-[#0f1419]/20"
+								/>
+								<div class="relative z-10 flex h-full flex-col justify-end p-6 lg:p-8">
+									<p class="preview-label">Featured</p>
+									<h2 class="preview-title">{{ previewProject.title }}</h2>
+									<div class="card-content preview-body" v-html="previewProject.html" />
+								</div>
 							</div>
-						</div>
-					</Transition>
-				</article>
+						</Transition>
+					</article>
 
-				<div
-					class="autoplay-progress relative h-10 w-1.5 shrink-0 overflow-hidden rounded-full lg:h-auto lg:self-stretch"
-					:class="isHovered ? 'opacity-40' : 'opacity-100'"
-					aria-hidden="true"
-				>
 					<div
-						class="autoplay-progress__fill absolute inset-x-0 bottom-0 rounded-full"
-						:class="isHovered ? '' : 'autoplay-progress__fill--active'"
-						:style="{ height: `${autoplayProgress}%` }"
-					/>
-				</div>
+						class="autoplay-progress relative h-10 w-1.5 shrink-0 overflow-hidden rounded-full lg:h-auto lg:self-stretch"
+						:class="isHovered ? 'opacity-40' : 'opacity-100'"
+						aria-hidden="true"
+					>
+						<div
+							class="autoplay-progress__fill absolute inset-x-0 bottom-0 rounded-full"
+							:class="isHovered ? '' : 'autoplay-progress__fill--active'"
+							:style="{ height: `${autoplayProgress}%` }"
+						/>
+					</div>
 
-				<div class="slider-card grid-card relative w-full overflow-hidden">
-					<SliderElement
-						class="size-full"
-						:max="queue.length"
-						:current="0"
-						:projects="queue"
-						:hovered-index="hoveredIndex"
-						@select="rotateTo"
-						@hover="hoveredIndex = $event"
-					/>
-				</div>
+					<div class="slider-card grid-card relative w-full overflow-hidden">
+						<SliderElement
+							class="size-full"
+							:max="queue.length"
+							:current="0"
+							:projects="queue"
+							:hovered-index="hoveredIndex"
+							@select="rotateTo"
+							@hover="hoveredIndex = $event"
+						/>
+					</div>
 				</div>
 			</div>
 
@@ -140,10 +140,7 @@ const rotateNextManual = () => {
 const rotateTo = (displayIndex: number) => {
 	if (displayIndex <= 0 || displayIndex >= queue.value.length) return;
 
-	queue.value = [
-		...queue.value.slice(displayIndex),
-		...queue.value.slice(0, displayIndex)
-	];
+	queue.value = [...queue.value.slice(displayIndex), ...queue.value.slice(0, displayIndex)];
 	hoveredIndex.value = null;
 	resetCycle();
 	if (!isHovered.value) startAutoplay();
@@ -295,7 +292,9 @@ onUnmounted(() => stopAutoplay());
 	letter-spacing: 0.02em;
 	color: var(--accent-purple-light);
 	text-decoration: none;
-	transition: color 180ms ease, gap 180ms ease;
+	transition:
+		color 180ms ease,
+		gap 180ms ease;
 }
 
 .preview-body a:hover {

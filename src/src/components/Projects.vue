@@ -9,7 +9,7 @@
 		<div class="projects-vignette" aria-hidden="true" />
 
 		<HoverBox
-			class="profile-close bottom-4 right-6 z-20 duration-700 lg:right-10"
+			class="profile-close right-6 bottom-4 z-20 duration-700 lg:right-10"
 			data-in_viewport="fade-right"
 		>
 			<span class="no-select font-mono text-2xl tracking-tight lg:text-3xl">&lt;/profile&gt;</span>
@@ -20,8 +20,8 @@
 				<p class="projects-eyebrow">Projects</p>
 				<h2 class="projects-title">Selected work &amp; experiments</h2>
 				<p class="projects-lead">
-					Hackathons, open-source tools, game dev, and research — browse the fractal grid or let
-					it autoplay.
+					Hackathons, open-source tools, game dev, and research — browse the fractal grid or let it
+					autoplay.
 				</p>
 			</header>
 

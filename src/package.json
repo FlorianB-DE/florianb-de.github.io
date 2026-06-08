@@ -6,7 +6,8 @@
 		"dev": "vite",
 		"build": "vue-tsc --noEmit && vite build",
 		"preview": "vite preview",
-		"format": "npx prettier --write ."
+		"format": "prettier --write .",
+		"format:vue": "prettier --write \"src/**/*.vue\""
 	},
 	"dependencies": {
 		"@heroicons/vue": "^2.2.0",
@@ -21,6 +22,7 @@
 		"postcss": "^8.5.15",
 		"prettier": "^3.8.3",
 		"prettier-plugin-tailwindcss": "^0.8.0",
+		"prettier-plugin-vue": "^1.1.6",
 		"tailwindcss": "^4.3.0",
 		"typescript": "^6.0.3",
 		"vite": "^8.0.16",

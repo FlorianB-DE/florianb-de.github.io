@@ -1,74 +1,62 @@
 <template>
-	<section id="me" class="about relative overflow-hidden" data-heading="About Me" data-in_viewport="">
+	<section
+		id="me"
+		class="about relative overflow-hidden"
+		data-heading="About Me"
+		data-in_viewport=""
+	>
 		<div class="about-bg" aria-hidden="true" />
+
 		<div class="about-vignette" aria-hidden="true" />
 
 		<div class="about-inner">
 			<header class="about-header duration-700" data-in_viewport="fade-left">
 				<p class="about-eyebrow">About Me</p>
+
 				<h2 class="about-title">Building software across the stack</h2>
 			</header>
 
-			<div class="about-grid">
-				<article class="about-card duration-700" data-in_viewport="fade-left">
-					<h3 class="about-card-title">Background</h3>
-					<p class="about-card-text">
-						I'm Florian Becker, a software developer based in Bochum, Germany. I recently
-						completed my B.Sc. in Applied Computer Science at Ruhr-Universität Bochum, with a
-						thesis on automated SBOM generation and evaluation in Rust.
-					</p>
-					<ul class="about-facts">
-						<li>B.Sc. Applied Computer Science · grade 1.3 thesis</li>
-						<li>German (native) · English (C1)</li>
-					</ul>
-				</article>
+			<div class="about-main">
+				<div class="about-grid">
+					<article class="about-card duration-700" data-in_viewport="fade-left">
+						<h3 class="about-card-title">Background</h3>
 
-				<figure class="about-figure duration-700" data-in_viewport="scale-in">
-					<div class="mannequin-glow" aria-hidden="true" />
-					<div class="mannequin-stage">
-						<div class="part">
-							<div
-								class="head relative flex h-24 flex-col items-center justify-center rounded-b-[10%] rounded-t-[40%] bg-amber-100"
-							>
-								<img class="absolute top-[-10px] w-[20rem]" id="hair" src="" alt="" />
-								<div class="eyes mt-4 flex w-full justify-around">
-									<div class="eye circle flex h-5 w-5 border-2 border-white bg-green-800">
-										<div class="circle m-auto aspect-square w-1.5 bg-black" />
-									</div>
-									<div class="eye circle flex h-5 w-5 border-2 border-white bg-green-800">
-										<div class="circle m-auto aspect-square w-1.5 bg-black" />
-									</div>
-								</div>
-								<div class="flex w-full justify-center pt-4">
-									<div class="mouth h-5 w-[50%] rounded-b-[50%] rounded-t bg-red-400" />
-								</div>
-							</div>
-						</div>
-						<div class="part">
-							<div class="arm relative z-0 h-32 rotate-[50deg] rounded-2xl bg-amber-100" />
-							<div class="body z-[1] h-40 rounded-3xl bg-green-600" />
-							<div class="arm right relative z-0 h-32 rotate-[-45deg] rounded-2xl bg-amber-100" />
-						</div>
-					</div>
-				</figure>
+						<p class="about-card-text">
+							I'm Florian Becker, a software developer based in Bochum, Germany. I recently
+							completed my B.Sc. in Applied Computer Science at Ruhr-Universität Bochum, with a
+							thesis on automated SBOM generation and evaluation in Rust.
+						</p>
 
-				<article class="about-card duration-700" data-in_viewport="fade-right">
-					<h3 class="about-card-title">Currently</h3>
-					<p class="about-card-text">
-						Full-stack developer at Q.Two Digital Solutions, and working student on
-						<strong>OpenBIMRL</strong> at the Chair of Computing in Engineering — building tools
-						for rule-based BIM validation.
-					</p>
-					<p class="about-card-text">
-						Outside work: hackathons, open-source side projects, and game development in Unity and
-						Unreal.
-					</p>
-				</article>
+						<ul class="about-facts">
+							<li>B.Sc. Applied Computer Science · grade 1.3 thesis</li>
+
+							<li>German (native) · English (C1)</li>
+						</ul>
+					</article>
+
+					<Mannequin />
+
+					<article class="about-card duration-700" data-in_viewport="fade-right">
+						<h3 class="about-card-title">Currently</h3>
+
+						<p class="about-card-text">
+							Full-stack developer at Q.Two Digital Solutions, and working student on
+
+							<strong>OpenBIMRL</strong> at the Chair of Computing in Engineering — building tools
+							for rule-based BIM validation.
+						</p>
+
+						<p class="about-card-text">
+							Outside work: hackathons, open-source side projects, and game development in Unity and
+							Unreal.
+						</p>
+					</article>
+				</div>
+
+				<AboutSkills :skills="skills" />
 			</div>
 
-			<ul class="about-skills duration-700" data-in_viewport="fade-left">
-				<li v-for="skill in skills" :key="skill">{{ skill }}</li>
-			</ul>
+			<CareerTimeline />
 		</div>
 	</section>
 </template>
@@ -76,11 +64,22 @@
 <script lang="ts" setup>
 import { inject, onMounted } from 'vue';
 import ContentSection from '../interfaces/ContentSection';
-import hair from '../assets/hair.png';
+import AboutSkills from './about/AboutSkills.vue';
+import CareerTimeline from './about/CareerTimeline.vue';
+import Mannequin from './about/Mannequin.vue';
 import { InformationCircleIcon as outlineIcon } from '@heroicons/vue/24/outline';
 import { InformationCircleIcon as solidIcon } from '@heroicons/vue/24/solid';
 
-const skills = ['TypeScript', 'Rust', 'Kotlin', 'C++', 'Vue', 'Unity', 'Unreal Engine', 'BIM / IFC'];
+const skills = [
+	'TypeScript',
+	'Rust',
+	'Kotlin',
+	'C++',
+	'Vue',
+	'Unity',
+	'Unreal Engine',
+	'BIM / IFC'
+];
 
 onMounted(() => {
 	const el = document.getElementById('me');
@@ -90,7 +89,6 @@ onMounted(() => {
 			active: false,
 			icon: [outlineIcon, solidIcon]
 		});
-		(el.querySelector('#hair') as HTMLImageElement).src = hair;
 	}
 });
 </script>
@@ -99,11 +97,9 @@ onMounted(() => {
 @reference 'tailwindcss';
 
 .about {
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	height: 100vh;
 	width: 100%;
+	overflow: hidden;
 }
 
 .about-bg {
@@ -127,13 +123,24 @@ onMounted(() => {
 	z-index: 1;
 	display: flex;
 	flex-direction: column;
-	gap: clamp(1.5rem, 3vh, 2.5rem);
 	width: min(72rem, 100%);
-	padding: clamp(5.5rem, 10vh, 7rem) clamp(1.25rem, 4vw, 2.5rem) clamp(2rem, 4vh, 3rem);
+	height: 100%;
+	margin: 0 auto;
+	padding: clamp(4.5rem, 8vh, 5.5rem) clamp(1.25rem, 4vw, 2.5rem) clamp(0.75rem, 1.5vh, 1.25rem);
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.about-main {
+	display: flex;
+	flex: 0 0 auto;
+	flex-direction: column;
+	gap: 0.35rem;
+	margin-top: calc(clamp(0.85rem, 2vh, 1.35rem) + 5rem);
 }
 
 .about-header {
-	max-width: 36rem;
+	flex-shrink: 0;
 }
 
 .about-eyebrow {
@@ -149,7 +156,7 @@ onMounted(() => {
 .about-title {
 	margin: 0;
 	font-family: var(--font-display);
-	font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+	font-size: clamp(1.5rem, 3vw, 2.35rem);
 	font-weight: 600;
 	line-height: 1.1;
 	letter-spacing: -0.02em;
@@ -158,8 +165,10 @@ onMounted(() => {
 
 .about-grid {
 	display: grid;
+	flex: 0 0 auto;
 	align-items: center;
-	gap: clamp(1.25rem, 3vw, 2rem);
+	align-content: center;
+	gap: clamp(0.75rem, 1.5vw, 1.25rem);
 	grid-template-columns: 1fr;
 }
 
@@ -171,7 +180,7 @@ onMounted(() => {
 }
 
 .about-card {
-	padding: clamp(1.1rem, 2vw, 1.5rem);
+	padding: clamp(0.85rem, 1.5vw, 1.15rem);
 	border-radius: 0.85rem;
 	border: 1px solid rgba(255, 255, 255, 0.08);
 	background: rgba(15, 20, 25, 0.55);
@@ -222,105 +231,6 @@ onMounted(() => {
 	color: var(--accent-purple-light);
 }
 
-.about-figure {
-	position: relative;
-	display: flex;
-	flex-shrink: 0;
-	justify-content: center;
-	margin: 0;
-	padding: clamp(0.5rem, 2vw, 1rem) 0;
-}
-
-.mannequin-glow {
-	position: absolute;
-	inset: 10% 15%;
-	border-radius: 50%;
-	background: radial-gradient(
-		circle,
-		rgba(159, 167, 255, 0.18) 0%,
-		rgba(89, 25, 141, 0.1) 45%,
-		transparent 72%
-	);
-	filter: blur(28px);
-	pointer-events: none;
-}
-
-.mannequin-stage {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 20rem;
-	max-width: 100%;
-	padding: 1rem 0 0.5rem;
-}
-
-.part {
-	display: flex;
-	width: 20rem;
-	max-width: 100%;
-	justify-content: center;
-}
-
-.head {
-	width: 6rem;
-	flex-shrink: 0;
-}
-
-.head #hair {
-	transform: scale(1.3, 1.3);
-}
-
-.mouth {
-	border: 3px inset #3a0000;
-}
-
-.arm {
-	aspect-ratio: 1/4;
-}
-
-.arm::after {
-	content: '';
-	position: absolute;
-	bottom: -45%;
-	left: 150%;
-	z-index: 10;
-	height: 8rem;
-	width: 100%;
-	rotate: 90deg;
-	border-radius: 1rem;
-	background-color: var(--color-amber-100, #fef3c7);
-}
-
-.right::after {
-	animation: shake 1s ease-in-out infinite;
-}
-
-.body {
-	width: 8rem;
-	flex-shrink: 0;
-}
-
-.about-skills {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.5rem;
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-
-.about-skills li {
-	padding: 0.35rem 0.75rem;
-	border-radius: 999px;
-	border: 1px solid rgba(159, 167, 255, 0.25);
-	background: rgba(89, 25, 141, 0.2);
-	font-family: var(--font-mono);
-	font-size: 0.72rem;
-	letter-spacing: 0.04em;
-	color: rgba(255, 255, 255, 0.72);
-}
-
 @media (orientation: portrait) and (max-width: 1023px) {
 	.about-grid {
 		grid-template-columns: 1fr 1fr;
@@ -337,7 +247,7 @@ onMounted(() => {
 		grid-area: right;
 	}
 
-	.about-figure {
+	.about-grid :deep(.mannequin) {
 		grid-area: figure;
 	}
 }

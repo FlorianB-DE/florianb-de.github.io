@@ -1,0 +1,42 @@
+[
+	{
+		"date": "2025-10",
+		"title": "BIM-Portal Hackathon",
+		"description": "1st place in Berlin with team ScrumMasters — AI-based BIM model checking CoPilot.",
+		"url": "https://blog.florianbecker.eu/hackathon/bim/research/teamwork/2025/10/01/BIMPortalHackathon.html",
+		"category": "education"
+	},
+	{
+		"date": "2025-02",
+		"title": "Bachelor thesis",
+		"description": "Automated SBoM generation and evaluation across 714 GitHub repos (grade 1.3).",
+		"url": "https://blog.florianbecker.eu/2025/02/01/BachelorThesis.html",
+		"category": "education"
+	},
+	{
+		"date": "2025",
+		"title": "B.Sc. Applied Computer Science",
+		"description": "Graduated from Ruhr-Universität Bochum.",
+		"category": "education"
+	},
+	{
+		"start": "2023-04",
+		"title": "OpenBIMRL",
+		"description": "Working student at the Chair of Computing in Engineering — rule-based IFC validation.",
+		"url": "https://blog.florianbecker.eu/2024/10/01/OpenBIMRL.html",
+		"category": "education"
+	},
+	{
+		"start": "2019-10",
+		"end": "2025",
+		"title": "Ruhr-Universität Bochum",
+		"description": "B.Sc. Applied Computer Science.",
+		"category": "education"
+	},
+	{
+		"start": "2020-06",
+		"title": "Q.Two Digital Solutions",
+		"description": "Working student full-stack developer with own projects and responsibilities.",
+		"category": "work"
+	}
+]

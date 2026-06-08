@@ -2,15 +2,14 @@
 	<div class="relative h-full w-full overflow-hidden">
 		<Transition name="cell-bubble" mode="out-in">
 			<div :key="imageUrl + title" class="absolute inset-0">
-				<img
-					:src="imageUrl"
-					:alt="title"
-					class="absolute inset-0 h-full w-full object-cover"
-				/>
+				<img :src="imageUrl" :alt="title" class="absolute inset-0 h-full w-full object-cover" />
 				<div
 					class="relative z-10 flex h-full items-end bg-gradient-to-t from-[#0f1419]/95 via-[#0f1419]/30 to-transparent p-2 lg:p-3"
 				>
-					<span class="truncate text-left font-mono text-[0.65rem] font-medium tracking-wide text-white/90 lg:text-xs">{{ title }}</span>
+					<span
+						class="truncate text-left font-mono text-[0.65rem] font-medium tracking-wide text-white/90 lg:text-xs"
+						>{{ title }}</span
+					>
 				</div>
 			</div>
 		</Transition>
