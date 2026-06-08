@@ -8,7 +8,7 @@
 			<a
 				v-for="(item, n) in items"
 				:key="item.el.id"
-				class="no-select icon ml-2 mr-2 cursor-pointer"
+				class="no-select icon mr-2 ml-2 cursor-pointer"
 				@click="dispatcher(item)"
 				:style="`--item-no: ${n}`"
 			>
@@ -107,7 +107,8 @@ nav {
 }
 
 .closed .icon > svg {
-	transition: transform calc(1s * var(--time-scale-multiplier))
+	transition:
+		transform calc(1s * var(--time-scale-multiplier))
 			calc(160ms * var(--time-scale-multiplier) * var(--item-no)),
 		opacity calc(275ms * var(--time-scale-multiplier) * (var(--item-no) + 1))
 			calc(160ms * var(--time-scale-multiplier) * var(--item-no));

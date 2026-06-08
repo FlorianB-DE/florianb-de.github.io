@@ -1,58 +1,85 @@
 <template>
 	<section
 		id="me"
-		class="flex flex-row overflow-hidden portrait:flex-wrap"
+		class="about relative overflow-hidden"
 		data-heading="About Me"
 		data-in_viewport=""
 	>
-		<article
-			class="mt-20 pl-10 text-white duration-1000 portrait:order-1 portrait:h-1/3 landscape:h-full landscape:w-1/3"
-			data-in_viewport="fade-left"
-		>
-			<p class="text-2xl opacity-60">this is some sample text</p>
-		</article>
-		<figure
-			class="flex w-full flex-col items-center justify-center overflow-hidden duration-700 xl:w-1/3 portrait:order-3 portrait:h-2/3 landscape:h-full"
-		>
-			<div class="part">
-				<div
-					class="head relative flex h-24 flex-col items-center justify-center rounded-b-[10%] rounded-t-[40%] bg-amber-100"
-				>
-					<img class="absolute top-[-10px] w-[20rem]" id="hair" src="" />
-					<div class="eyes mt-4 flex w-full justify-around">
-						<div class="eye circle flex h-5 w-5 border-2 border-white bg-green-800">
-							<div class="circle m-auto aspect-square w-1.5 bg-black" />
-						</div>
-						<div class="eye circle flex h-5 w-5 border-2 border-white bg-green-800">
-							<div class="circle m-auto aspect-square w-1.5 bg-black" />
-						</div>
-					</div>
-					<div class="flex w-full justify-center pt-4">
-						<div class="mouth h-5 w-[50%] rounded-b-[50%] rounded-t bg-red-400"></div>
-					</div>
+		<div class="about-bg" aria-hidden="true" />
+
+		<div class="about-vignette" aria-hidden="true" />
+
+		<div class="about-inner">
+			<header class="about-header duration-700" data-in_viewport="fade-left">
+				<p class="about-eyebrow">About Me</p>
+
+				<h2 class="about-title">Building software across the stack</h2>
+			</header>
+
+			<div class="about-main">
+				<div class="about-grid">
+					<article class="about-card duration-700" data-in_viewport="fade-left">
+						<h3 class="about-card-title">Background</h3>
+
+						<p class="about-card-text">
+							I'm Florian Becker, a software developer based in Bochum, Germany. I recently
+							completed my B.Sc. in Applied Computer Science at Ruhr-Universität Bochum, with a
+							thesis on automated SBOM generation and evaluation in Rust.
+						</p>
+
+						<ul class="about-facts">
+							<li>B.Sc. Applied Computer Science · grade 1.3 thesis</li>
+
+							<li>German (native) · English (C1)</li>
+						</ul>
+					</article>
+
+					<Mannequin />
+
+					<article class="about-card duration-700" data-in_viewport="fade-right">
+						<h3 class="about-card-title">Currently</h3>
+
+						<p class="about-card-text">
+							Full-stack developer at Q.Two Digital Solutions, and working student on
+
+							<strong>OpenBIMRL</strong> at the Chair of Computing in Engineering — building tools
+							for rule-based BIM validation.
+						</p>
+
+						<p class="about-card-text">
+							Outside work: hackathons, open-source side projects, and game development in Unity and
+							Unreal.
+						</p>
+					</article>
 				</div>
+
+				<AboutSkills :skills="skills" />
 			</div>
-			<div class="part">
-				<div class="arm relative z-0 h-32 rotate-[50deg] rounded-2xl bg-amber-100" />
-				<div class="body zinde z-[1] h-40 rounded-3xl bg-green-600" />
-				<div class="arm right relative z-0 h-32 rotate-[-45deg] rounded-2xl bg-amber-100" />
-			</div>
-		</figure>
-		<article
-			class="mt-20 pr-10 text-right text-white duration-1000 portrait:order-2 portrait:h-1/3 landscape:h-full landscape:w-1/3"
-			data-in_viewport="fade-right"
-		>
-			<p class="text-2xl opacity-60">this is some sample text</p>
-		</article>
+
+			<CareerTimeline />
+		</div>
 	</section>
 </template>
 
 <script lang="ts" setup>
 import { inject, onMounted } from 'vue';
 import ContentSection from '../interfaces/ContentSection';
-import hair from '../assets/hair.png';
+import AboutSkills from './about/AboutSkills.vue';
+import CareerTimeline from './about/CareerTimeline.vue';
+import Mannequin from './about/Mannequin.vue';
 import { InformationCircleIcon as outlineIcon } from '@heroicons/vue/24/outline';
 import { InformationCircleIcon as solidIcon } from '@heroicons/vue/24/solid';
+
+const skills = [
+	'TypeScript',
+	'Rust',
+	'Kotlin',
+	'C++',
+	'Vue',
+	'Unity',
+	'Unreal Engine',
+	'BIM / IFC'
+];
 
 onMounted(() => {
 	const el = document.getElementById('me');
@@ -62,50 +89,166 @@ onMounted(() => {
 			active: false,
 			icon: [outlineIcon, solidIcon]
 		});
-		(el.querySelector('#hair') as HTMLImageElement).src = hair;
 	}
 });
 </script>
 
 <style scoped>
-.part {
-	@apply flex w-full justify-center;
+@reference 'tailwindcss';
+
+.about {
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
 }
 
-.head {
-	width: min(6rem, 22.5%);
+.about-bg {
+	position: absolute;
+	inset: 0;
+	background:
+		radial-gradient(ellipse 45% 40% at 50% 55%, rgba(89, 25, 141, 0.22), transparent 68%),
+		radial-gradient(ellipse 35% 30% at 80% 30%, var(--hero-warm-soft), transparent 70%),
+		linear-gradient(160deg, #10161d 0%, #1a2332 45%, #121820 100%);
 }
 
-.head #hair {
-	transform: scale(1.3, 1.3);
-}
-.mouth {
-	border: 3px inset #3a0000;
-}
-
-.arm {
-	aspect-ratio: 1/4;
+.about-vignette {
+	position: absolute;
+	inset: 0;
+	background: radial-gradient(ellipse at center, transparent 30%, rgba(0, 0, 0, 0.42) 100%);
+	pointer-events: none;
 }
 
-.arm::after {
-	content: '';
-	@apply absolute bottom-[-45%] left-[150%] z-10 h-32 w-full rotate-90 rounded-2xl bg-amber-100;
+.about-inner {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	width: min(72rem, 100%);
+	height: 100%;
+	margin: 0 auto;
+	padding: clamp(4.5rem, 8vh, 5.5rem) clamp(1.25rem, 4vw, 2.5rem) clamp(0.75rem, 1.5vh, 1.25rem);
+	box-sizing: border-box;
+	overflow: hidden;
 }
 
-.right::after {
-	animation: shake 1s ease-in-out infinite;
+.about-main {
+	display: flex;
+	flex: 0 0 auto;
+	flex-direction: column;
+	gap: 0.35rem;
+	margin-top: calc(clamp(0.85rem, 2vh, 1.35rem) + 5rem);
 }
 
-.body {
-	width: min(8rem, 30%);
+.about-header {
+	flex-shrink: 0;
 }
-@media (orientation: portrait) {
-	article {
-		flex: 0 0 50%;
+
+.about-eyebrow {
+	margin: 0 0 0.5rem;
+	font-family: var(--font-mono);
+	font-size: 0.8rem;
+	font-weight: 300;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.45);
+}
+
+.about-title {
+	margin: 0;
+	font-family: var(--font-display);
+	font-size: clamp(1.5rem, 3vw, 2.35rem);
+	font-weight: 600;
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+	color: #fff;
+}
+
+.about-grid {
+	display: grid;
+	flex: 0 0 auto;
+	align-items: center;
+	align-content: center;
+	gap: clamp(0.75rem, 1.5vw, 1.25rem);
+	grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+	.about-grid {
+		grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+		gap: clamp(1rem, 2vw, 2rem);
+	}
+}
+
+.about-card {
+	padding: clamp(0.85rem, 1.5vw, 1.15rem);
+	border-radius: 0.85rem;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	background: rgba(15, 20, 25, 0.55);
+	backdrop-filter: blur(10px);
+	box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+}
+
+.about-card-title {
+	margin: 0 0 0.75rem;
+	font-family: var(--font-mono);
+	font-size: 0.72rem;
+	font-weight: 400;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--accent-purple-light);
+}
+
+.about-card-text {
+	margin: 0 0 0.85rem;
+	font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+	line-height: 1.65;
+	color: rgba(255, 255, 255, 0.68);
+}
+
+.about-card-text:last-child {
+	margin-bottom: 0;
+}
+
+.about-card-text strong {
+	font-weight: 600;
+	color: rgba(255, 255, 255, 0.9);
+}
+
+.about-facts {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 0.45rem;
+	font-family: var(--font-mono);
+	font-size: 0.78rem;
+	color: rgba(255, 255, 255, 0.45);
+}
+
+.about-facts li::before {
+	content: '— ';
+	color: var(--accent-purple-light);
+}
+
+@media (orientation: portrait) and (max-width: 1023px) {
+	.about-grid {
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+			'left right'
+			'figure figure';
 	}
 
-	figure {
-		flex: 0 0 100%;
+	.about-card:first-of-type {
+		grid-area: left;
+	}
+
+	.about-card:last-of-type {
+		grid-area: right;
+	}
+
+	.about-grid :deep(.mannequin) {
+		grid-area: figure;
 	}
 }
 </style>

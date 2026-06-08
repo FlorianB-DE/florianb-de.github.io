@@ -2,12 +2,33 @@ import { createApp, reactive } from 'vue';
 import App from './App.vue';
 import ContentSection from './interfaces/ContentSection';
 
-import css from './styles/styles.css';
+import './styles/styles.css';
 
 const sections = reactive([] as Array<ContentSection>),
 	activeIndex = () => {
 		const index = sections.findIndex((element) => element.active);
 		return index < 0 ? 0 : index;
+	},
+	syncActiveSectionFromScroll = () => {
+		if (sections.length === 0) return;
+
+		const viewportMid = window.innerHeight / 2;
+		let bestIndex = 0;
+		let bestDistance = Infinity;
+
+		sections.forEach((section, index) => {
+			const rect = section.el.getBoundingClientRect();
+			const sectionMid = rect.top + rect.height / 2;
+			const distance = Math.abs(sectionMid - viewportMid);
+			if (distance < bestDistance) {
+				bestDistance = distance;
+				bestIndex = index;
+			}
+		});
+
+		sections.forEach((section, index) => {
+			section.active = index === bestIndex;
+		});
 	},
 	scrollToSection = (indexOffset = 1) => {
 		const nextIndex = Math.min(activeIndex() + indexOffset, sections.length - 1),
@@ -45,4 +66,5 @@ createApp(App)
 	.provide('activeIndex', activeIndex)
 	.provide('activeSection', () => sections[activeIndex()])
 	.provide('scrollToSection', scrollToSection)
+	.provide('syncActiveSectionFromScroll', syncActiveSectionFromScroll)
 	.mount('#app');

@@ -1,8 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ['./src/**/*.{vue,js,ts,jsx,tsx}', './src/components/*.{vue,js,ts,jsx,tsx}'],
 	theme: {
 		extend: {
+			fontFamily: {
+				display: ['Syne', 'system-ui', 'sans-serif'],
+				mono: ['JetBrains Mono', 'ui-monospace', 'monospace']
+			},
 			keyframes: {
 				'jet-in': {
 					'0%': {

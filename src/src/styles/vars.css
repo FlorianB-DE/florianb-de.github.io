@@ -1,0 +1,8 @@
+:root {
+	--accent-purple: #59198d;
+	--accent-purple-light: #9fa7ff;
+	--font-display: 'Syne', system-ui, sans-serif;
+	--font-mono: 'JetBrains Mono', ui-monospace, monospace;
+	--hero-warm: #ff9a3c;
+	--hero-warm-soft: rgba(255, 154, 60, 0.22);
+}

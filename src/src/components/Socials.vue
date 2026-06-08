@@ -32,6 +32,8 @@ import githubIcon from '../assets/github.svg';
 import linkedinIcon from '../assets/LinkedIn.png';
 </script>
 <style>
+@reference 'tailwindcss';
+
 .background-bar {
 	transform: perspective(10px) rotateX(0.4deg);
 }

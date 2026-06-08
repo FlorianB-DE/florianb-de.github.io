@@ -3,6 +3,8 @@
 </template>
 <script lang="ts"></script>
 <style>
+@reference 'tailwindcss';
+
 .slider .track > .slide {
 	@apply m-10;
 }

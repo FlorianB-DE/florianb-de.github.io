@@ -1,12 +1,68 @@
 [
 	{
-		"title": "Bootstrap-Style Double Slider",
-		"image": "npmjs-logo",
-		"mdFile": "bss-double-slider"
+		"title": "Winning the BIM-Portal Hackathon in Berlin",
+		"image": "bim-portal-hackathon",
+		"mdFile": "bim-portal-hackathon",
+		"url": "https://blog.florianbecker.eu/hackathon/bim/research/teamwork/2025/10/01/BIMPortalHackathon.html"
 	},
 	{
-		"title": "Testproject",
-		"image": "hello_world",
-		"mdFile": "testproject"
+		"title": "Bachelor Thesis - Automated SBoM Generation and Evaluation",
+		"image": "bachelor-thesis",
+		"mdFile": "bachelor-thesis",
+		"url": "https://blog.florianbecker.eu/2025/02/01/BachelorThesis.html"
+	},
+	{
+		"title": "Finances OSS",
+		"image": "finance-oss",
+		"mdFile": "finance-oss",
+		"url": "https://github.com/FlorianB-DE/finance-oss"
+	},
+	{
+		"title": "OpenBIMRL - Rule-Based Validation for IFC Models",
+		"image": "openbimrl",
+		"mdFile": "openbimrl",
+		"url": "https://blog.florianbecker.eu/2024/10/01/OpenBIMRL.html"
+	},
+	{
+		"title": "Bootstrap Double Slider",
+		"image": "bss-double-slider",
+		"mdFile": "bss-double-slider",
+		"url": "https://www.npmjs.com/package/bootstrap-double-slider"
+	},
+	{
+		"title": "Baureihensammler",
+		"image": "baureihensammler",
+		"mdFile": "baureihensammler",
+		"url": "https://github.com/FlorianB-DE/Baureihensammler"
+	},
+	{
+		"title": "A Star in UE4 - The Material",
+		"image": "ue4-star",
+		"mdFile": "ue4-star",
+		"url": "https://blog.florianbecker.eu/a-star-in-unreal-engine-4/2023/04/03/UE4StarMat.html"
+	},
+	{
+		"title": "Homeland Shelter - A Java Roguelike from Scratch",
+		"image": "homeland-shelter",
+		"mdFile": "homeland-shelter",
+		"url": "https://blog.florianbecker.eu/2023/03/03/HomelandShelter.html"
+	},
+	{
+		"title": "Forest Warrior - Indirect-Control Game in Unity",
+		"image": "forest-warrior",
+		"mdFile": "forest-warrior",
+		"url": "https://blog.florianbecker.eu/2021/04/18/GamesInCSharp.html"
+	},
+	{
+		"title": "OOM Project - Modeling a Game Engine",
+		"image": "oom-project",
+		"mdFile": "oom-project",
+		"url": "https://blog.florianbecker.eu/2020/08/31/OOMProject.html"
+	},
+	{
+		"title": "School Project - A game in Unity",
+		"image": "school-unity",
+		"mdFile": "school-unity",
+		"url": "https://blog.florianbecker.eu/2019/10/01/ProjektkursInformatik.html"
 	}
 ]

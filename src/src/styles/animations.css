@@ -1,17 +1,13 @@
 @keyframes shake {
-	0% {
-		transform: rotateZ(-90deg);
+	0%,
+	100% {
+		rotate: -90deg;
 		bottom: -45%;
 	}
 
 	50% {
-		transform: rotateZ(-105deg);
+		rotate: -105deg;
 		bottom: -30%;
-	}
-
-	100% {
-		transform: rotateZ(-90deg);
-		bottom: -45%;
 	}
 }
 

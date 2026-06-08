@@ -3,12 +3,19 @@ import TopNavigation from './components/TopNavigation.vue';
 import Me from './components/Me.vue';
 import Home from './components/Home.vue';
 
-import { inject, onMounted } from 'vue';
+import { inject, onMounted, onUnmounted } from 'vue';
 import Projects from './components/Projects.vue';
 import ContentSection from './interfaces/ContentSection';
 import Socials from './components/Socials.vue';
 
 const sections: Array<ContentSection> = inject('sections') as Array<ContentSection>;
+const syncActiveSectionFromScroll = inject('syncActiveSectionFromScroll') as () => void;
+
+const syncNavWithScroll = () => {
+	requestAnimationFrame(() => {
+		requestAnimationFrame(syncActiveSectionFromScroll);
+	});
+};
 
 onMounted(() => {
 	const inViewport: IntersectionObserverCallback = (entries, observer) => {
@@ -22,6 +29,13 @@ onMounted(() => {
 	// Attach observer to every [data-in_viewport] element:
 	const ELs_inViewport = document.querySelectorAll('[data-in_viewport]');
 	ELs_inViewport.forEach((EL) => Obs.observe(EL));
+
+	syncNavWithScroll();
+	window.addEventListener('pageshow', syncNavWithScroll);
+});
+
+onUnmounted(() => {
+	window.removeEventListener('pageshow', syncNavWithScroll);
 });
 </script>
 
@@ -34,7 +48,6 @@ onMounted(() => {
 		<Me />
 		<hr />
 		<Projects />
-		<footer class="h-[10vh] w-full"></footer>
 	</main>
 </template>
 

@@ -9,6 +9,6 @@ aside {
 	border: 10px solid;
 	border-image-slice: 1;
 	border-width: 5px;
-	border-image-source: linear-gradient(to right, #59198d, #9fa7ff);
+	border-image-source: linear-gradient(to right, var(--accent-purple), var(--accent-purple-light));
 }
 </style>
