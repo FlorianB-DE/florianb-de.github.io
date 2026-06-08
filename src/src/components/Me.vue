@@ -136,7 +136,13 @@ onMounted(() => {
 	flex: 0 0 auto;
 	flex-direction: column;
 	gap: 0.35rem;
-	margin-top: calc(clamp(0.85rem, 2vh, 1.35rem) + 5rem);
+	margin-top: clamp(0.85rem, 2vh, 1.35rem);
+}
+
+@media (min-width: 1024px) {
+	.about-main {
+		margin-top: calc(clamp(0.85rem, 2vh, 1.35rem) + 5rem);
+	}
 }
 
 .about-header {
@@ -229,26 +235,5 @@ onMounted(() => {
 .about-facts li::before {
 	content: '— ';
 	color: var(--accent-purple-light);
-}
-
-@media (orientation: portrait) and (max-width: 1023px) {
-	.about-grid {
-		grid-template-columns: 1fr 1fr;
-		grid-template-areas:
-			'left right'
-			'figure figure';
-	}
-
-	.about-card:first-of-type {
-		grid-area: left;
-	}
-
-	.about-card:last-of-type {
-		grid-area: right;
-	}
-
-	.about-grid :deep(.mannequin) {
-		grid-area: figure;
-	}
 }
 </style>

@@ -86,11 +86,18 @@ const entries = computed(() => sortTimeline(timelineData as TimelineEntry[]));
 
 <style scoped>
 .career-timeline {
+	display: none;
 	flex-shrink: 0;
 	width: 100%;
 	margin-top: calc(clamp(0.35rem, 0.75vh, 0.6rem) + 5rem);
 	padding: 0;
 	box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+	.career-timeline {
+		display: block;
+	}
 }
 
 .career-timeline-inner {

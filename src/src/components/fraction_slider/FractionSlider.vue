@@ -312,8 +312,15 @@ onUnmounted(() => stopAutoplay());
 }
 
 .autoplay-progress {
+	display: none;
 	background: rgba(255, 255, 255, 0.08);
 	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+@media (min-width: 1024px) {
+	.autoplay-progress {
+		display: block;
+	}
 }
 
 .preview-bubble-enter-active,

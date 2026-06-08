@@ -36,13 +36,19 @@ import hair from '../../assets/hair.png';
 <style scoped>
 .mannequin {
 	position: relative;
-	display: flex;
+	display: none;
 	justify-content: center;
 	align-items: center;
 	margin: 0;
 	padding: 0;
 	min-height: 0;
 	max-height: 100%;
+}
+
+@media (min-width: 1024px) {
+	.mannequin {
+		display: flex;
+	}
 }
 
 .mannequin-glow {
