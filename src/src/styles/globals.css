@@ -3,6 +3,6 @@ section {
 	width: 100%;
 }
 
-section:last-of-type {
-	height: 90vh;
+hr {
+	display: none;
 }

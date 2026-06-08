@@ -6,7 +6,7 @@
 		"url": "https://blog.florianbecker.eu/hackathon/bim/research/teamwork/2025/10/01/BIMPortalHackathon.html"
 	},
 	{
-		"title": "Bachelor Thesis – Automated SBoM Generation and Evaluation",
+		"title": "Bachelor Thesis - Automated SBoM Generation and Evaluation",
 		"image": "bachelor-thesis",
 		"mdFile": "bachelor-thesis",
 		"url": "https://blog.florianbecker.eu/2025/02/01/BachelorThesis.html"
@@ -18,7 +18,7 @@
 		"url": "https://github.com/FlorianB-DE/finance-oss"
 	},
 	{
-		"title": "OpenBIMRL – Rule-Based Validation for IFC Models",
+		"title": "OpenBIMRL - Rule-Based Validation for IFC Models",
 		"image": "openbimrl",
 		"mdFile": "openbimrl",
 		"url": "https://blog.florianbecker.eu/2024/10/01/OpenBIMRL.html"
@@ -42,19 +42,19 @@
 		"url": "https://blog.florianbecker.eu/a-star-in-unreal-engine-4/2023/04/03/UE4StarMat.html"
 	},
 	{
-		"title": "Homeland Shelter – A Java Roguelike from Scratch",
+		"title": "Homeland Shelter - A Java Roguelike from Scratch",
 		"image": "homeland-shelter",
 		"mdFile": "homeland-shelter",
 		"url": "https://blog.florianbecker.eu/2023/03/03/HomelandShelter.html"
 	},
 	{
-		"title": "Forest Warrior – Indirect-Control Game in Unity",
+		"title": "Forest Warrior - Indirect-Control Game in Unity",
 		"image": "forest-warrior",
 		"mdFile": "forest-warrior",
 		"url": "https://blog.florianbecker.eu/2021/04/18/GamesInCSharp.html"
 	},
 	{
-		"title": "OOM Project – Modeling a Game Engine",
+		"title": "OOM Project - Modeling a Game Engine",
 		"image": "oom-project",
 		"mdFile": "oom-project",
 		"url": "https://blog.florianbecker.eu/2020/08/31/OOMProject.html"

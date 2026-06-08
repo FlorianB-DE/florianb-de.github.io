@@ -3,7 +3,7 @@
 		<button
 			v-if="current < max"
 			type="button"
-			class="relative h-1/2 w-full shrink-0 overflow-hidden border border-white/20 transition hover:brightness-110 focus:outline-none"
+			class="grid-tile relative h-1/2 w-full shrink-0 overflow-hidden transition hover:brightness-110 focus:outline-none"
 			:class="tileRingClass(current)"
 			@click="emit('select', current)"
 			@mouseenter="emit('hover', current)"
@@ -19,7 +19,7 @@
 			<button
 				v-if="current + 1 < max"
 				type="button"
-				class="relative h-full w-1/2 shrink-0 overflow-hidden border border-white/20 transition hover:brightness-110 focus:outline-none"
+				class="grid-tile relative h-full w-1/2 shrink-0 overflow-hidden transition hover:brightness-110 focus:outline-none"
 				:class="tileRingClass(current + 1)"
 				@click="emit('select', current + 1)"
 				@mouseenter="emit('hover', current + 1)"
@@ -67,3 +67,9 @@ const tileRingClass = (displayIndex: number) => ({
 	'ring-2 ring-inset ring-white/70': displayIndex === props.hoveredIndex && displayIndex !== 0
 });
 </script>
+
+<style scoped>
+.grid-tile {
+	border: 1px solid rgba(255, 255, 255, 0.08);
+}
+</style>

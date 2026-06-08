@@ -48,7 +48,6 @@ onUnmounted(() => {
 		<Me />
 		<hr />
 		<Projects />
-		<footer class="h-[10vh] w-full"></footer>
 	</main>
 </template>
 
