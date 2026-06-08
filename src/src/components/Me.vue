@@ -9,7 +9,11 @@
 			class="mt-20 pl-10 text-white duration-1000 portrait:order-1 portrait:h-1/3 landscape:h-full landscape:w-1/3"
 			data-in_viewport="fade-left"
 		>
-			<p class="text-2xl opacity-60">this is some sample text</p>
+			<p class="text-2xl opacity-60">
+				I'm Florian Becker, a software developer from Bochum. I recently finished my B.Sc. in
+				Applied Computer Science at Ruhr University Bochum, with a thesis on automated SBOM
+				generation and evaluation in Rust.
+			</p>
 		</article>
 		<figure
 			class="flex w-full flex-col items-center justify-center overflow-hidden duration-700 xl:w-1/3 portrait:order-3 portrait:h-2/3 landscape:h-full"
@@ -42,7 +46,11 @@
 			class="mt-20 pr-10 text-right text-white duration-1000 portrait:order-2 portrait:h-1/3 landscape:h-full landscape:w-1/3"
 			data-in_viewport="fade-right"
 		>
-			<p class="text-2xl opacity-60">this is some sample text</p>
+			<p class="text-2xl opacity-60">
+				I work as a full-stack developer at Q.Two Digital Solutions and on OpenBIMRL at the Chair
+				of Computing in Engineering - building tools for rule-based BIM validation. I also love
+				hackathons, open-source side projects, and game dev in Unity and Unreal.
+			</p>
 		</article>
 	</section>
 </template>
