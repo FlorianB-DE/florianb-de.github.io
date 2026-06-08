@@ -68,6 +68,8 @@ onMounted(() => {
 </script>
 
 <style scoped>
+@reference 'tailwindcss';
+
 .part {
 	@apply flex w-full justify-center;
 }

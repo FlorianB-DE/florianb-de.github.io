@@ -2,7 +2,7 @@ import { createApp, reactive } from 'vue';
 import App from './App.vue';
 import ContentSection from './interfaces/ContentSection';
 
-import css from './styles/styles.css';
+import './styles/styles.css';
 
 const sections = reactive([] as Array<ContentSection>),
 	activeIndex = () => {

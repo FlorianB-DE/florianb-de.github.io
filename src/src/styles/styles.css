@@ -3,9 +3,8 @@
 @import 'vars.css';
 @import 'globals.css';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss' source('..');
+@config '../../tailwind.config.js';
 
 html,
 body,

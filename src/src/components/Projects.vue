@@ -5,61 +5,40 @@
 		data-heading="Projects"
 		data-in_viewport=""
 	>
-		<HoverBox class="bottom-10 right-10 duration-700" data-in_viewport="fade-right">
+		<HoverBox class="bottom-4 right-10 duration-700" data-in_viewport="fade-right">
 			<span class="no-select align-super text-5xl">&lt;/profile&gt;</span>
 		</HoverBox>
 		<div
-			class="projects--cards__container flex max-h-full flex-col justify-center gap-4 p-20 text-white lg:flex-row"
+			class="projects--cards__container flex max-h-full flex-col items-center justify-center gap-4 p-20 pb-28 text-white"
 		>
-			<FractionSlider :max="projects.length">
-				<template slot:0>
-					<span>test</span>
-				</template>
-			</FractionSlider>
-
-			<!-- <article
-				v-for="(project, index) in projects"
-				class=""
-			>
-				<img
-					:src="getImageFile(project.image)"
-					:alt="`project ${project.title} image`"
-					class="absolute z-[-1] h-full w-full object-cover opacity-25"
-				/>
-				<div class="h-full w-full p-8 hover:mix-blend-difference">
-					<div>
-						<h2 class="text-2xl">{{ project.title }}</h2>
-					</div>
-					<div class="card-content" v-html="getHTMLfromMD(project.mdFile)" />
-				</div>
-			</article> -->
+			<FractionSlider :projects="enrichedProjects" />
 		</div>
 	</section>
 </template>
 
 <script setup lang="ts">
-import { inject, onMounted, ref } from 'vue';
+import { computed, inject, onMounted } from 'vue';
 import { CommandLineIcon as outlineIcon } from '@heroicons/vue/24/outline';
 import { CommandLineIcon as solidIcon } from '@heroicons/vue/24/solid';
 import FractionSlider from './fraction_slider/FractionSlider.vue';
 import ContentSection from '../interfaces/ContentSection';
 import HoverBox from './HoverBox.vue';
 import showdown from 'showdown';
-import projects from '../content/projects/projects.json';
+import projectList from '../content/projects/projects.json';
+import type { EnrichedProject, Project } from '../interfaces/Project';
+
+const projects = projectList as Project[];
 
 const project_data = import.meta.glob('../content/projects/*.md', {
-	as: 'raw',
+	query: '?raw',
+	import: 'default',
 	eager: true
-});
-const project_images = import.meta.glob(
-	[
-		'../content/projects/*.png',
-		'../content/projects/*.jpg',
-		'../content/projects/*.jpeg',
-		'../content/projects/*.gif'
-	],
-	{ eager: true, import: 'default' }
-) as Record<string, string>;
+}) as Record<string, string>;
+
+const project_images = import.meta.glob('../content/projects/*.{png,jpg,jpeg,gif,svg,webp}', {
+	eager: true,
+	import: 'default'
+}) as Record<string, string>;
 
 onMounted(() => {
 	const el = document.getElementById('projects');
@@ -76,18 +55,24 @@ const getMDFile = (fileName: string): string => {
 };
 
 const getImageFile = (fileName: string): string => {
-	return project_images[
-		Object.keys(project_images).find((element) =>
-			element.includes(fileName)
-		) as keyof typeof project_images
-	];
+	const key = Object.keys(project_images).find((element) => element.includes(fileName));
+	return key ? project_images[key] : '';
 };
 
 const converter = new showdown.Converter();
 
 const getHTMLfromMD = (fileName: string): string => {
-	return converter.makeHtml(project_data[getMDFile(fileName)]);
+	const mdKey = getMDFile(fileName);
+	return mdKey ? converter.makeHtml(project_data[mdKey]) : '';
 };
+
+const enrichedProjects = computed<EnrichedProject[]>(() =>
+	projects.map((project) => ({
+		...project,
+		imageUrl: getImageFile(project.image),
+		html: getHTMLfromMD(project.mdFile)
+	}))
+);
 </script>
 
 <style></style>

@@ -1,3 +1,3 @@
-This slider is an extension to the popular CSS framework [Bootstrap](https://getbootstrap.com/).
+Bootstrap-style **double-ended range slider** — a drop-in extension for Bootstrap with touch support and accessible keyboard controls.
 
-View the package on [NPM](https://www.npmjs.com/package/bootstrap-double-slider) or check out the interactive [demo](https://www.florianbecker.eu/bss-range-slider/).
+View on [NPM](https://www.npmjs.com/package/bootstrap-double-slider) or try the [live demo](https://www.florianbecker.eu/bss-range-slider/).
