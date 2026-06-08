@@ -18,7 +18,7 @@ onMounted(() => {
 	if (el)
 		(inject('sections') as Array<ContentSection>).push({
 			el: el,
-			active: true,
+			active: false,
 			icon: [outlineIcon, solidIcon]
 		});
 });
