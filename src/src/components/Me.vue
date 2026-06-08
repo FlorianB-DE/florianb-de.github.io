@@ -91,7 +91,15 @@ onMounted(() => {
 
 .arm::after {
 	content: '';
-	@apply absolute bottom-[-45%] left-[150%] z-10 h-32 w-full rotate-90 rounded-2xl bg-amber-100;
+	position: absolute;
+	bottom: -45%;
+	left: 150%;
+	z-index: 10;
+	height: 8rem;
+	width: 100%;
+	rotate: 90deg;
+	border-radius: 1rem;
+	background-color: var(--color-amber-100, #fef3c7);
 }
 
 .right::after {
