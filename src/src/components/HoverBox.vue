@@ -1,14 +1,12 @@
 <template>
-	<aside class="absolute z-10 p-5 font-extralight text-white">
+	<aside class="hover-box border-5 border-solid  absolute z-10 p-5 text-white font-extralight">
 		<slot />
 	</aside>
 </template>
 <script lang="ts" setup></script>
 <style scoped>
-aside {
-	border: 10px solid;
+.hover-box {
 	border-image-slice: 1;
-	border-width: 5px;
 	border-image-source: linear-gradient(to right, var(--accent-purple), var(--accent-purple-light));
 }
 </style>

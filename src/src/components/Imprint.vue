@@ -19,10 +19,8 @@
 			data-in_viewport="fade-left"
 		>
 			<header class="mb-4">
-				<p
-					class="mb-2 font-mono text-[0.8rem] font-light tracking-[0.14em] text-white/45 uppercase"
-				>
-					Legal
+				<p class="mb-2 font-mono text-[0.8rem] font-light tracking-[0.14em] text-white/45 uppercase">
+					Legal Notice
 				</p>
 				<h2
 					class="[font-family:var(--font-display)] text-[clamp(1.75rem,3.5vw,2.75rem)] leading-[1.1] font-semibold tracking-[-0.02em] text-white"
@@ -32,57 +30,57 @@
 			</header>
 
 			<div
-				class="max-h-[60vh] [scrollbar-gutter:stable] overscroll-contain overflow-y-auto rounded-[0.9rem] border border-white/10 bg-[rgba(15,20,25,0.55)] p-[clamp(1rem,2vw,1.35rem)] pr-3 text-[0.82rem] leading-[1.5] text-white/70 shadow-[0_16px_40px_rgba(0,0,0,0.22)] backdrop-blur-[10px] [webkit-overflow-scrolling:touch] lg:max-h-none lg:text-[0.96rem] lg:leading-[1.65]"
+				class="max-h-[60vh] [scrollbar-gutter:stable] overscroll-contain overflow-y-auto rounded-[0.9rem] border border-white/10 bg-[rgba(15,20,25,0.55)] p-[clamp(1rem,2vw,1.35rem)] pr-3 text-[0.82rem] leading-[1.5] text-white/70 shadow-[0_16px_40px_rgba(0,0,0,0.22)] backdrop-blur-[10px] [webkit-overflow-scrolling:touch] lg:max-h-[80vh] lg:text-[0.96rem] lg:leading-[1.65]"
 				@wheel.stop
 				@touchstart.stop
 				@touchmove.stop
 				@touchend.stop
 			>
 				<p class="mb-3 lg:mb-4">
-					<strong>Kontakt</strong><br />
-					Freiberufler<br />
+					<strong>Contact</strong><br />
+					Freelancer<br />
 					Florian Becker
 				</p>
 				<p class="mb-3 lg:mb-4">
 					<strong>Becker - Software</strong><br />
 					Kollegstraße 2<br />
 					44801 Bochum<br />
-					E-Mail: info@florianbecker.eu
+					Email: info@florianbecker.eu
 				</p>
 				<p class="mb-3 lg:mb-4">
-					<strong>Postadresse</strong><br />
+					<strong>Postal Address</strong><br />
 					Postfach 10 02 02<br />
 					44702 Bochum
 				</p>
 				<p class="mb-3 lg:mb-4">
-					<strong>Steuerliche Angaben</strong><br />
-					Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
+					<strong>Tax Information</strong><br />
+					VAT identification number pursuant to Section 27a of the German VAT Act:<br />
 					350/5012/5300
 				</p>
 				<p class="mb-3 lg:mb-4">
-					<strong>Wirtschaftsidentifikationsnummer</strong><br />
+					<strong>Business Identification Number</strong><br />
 					DE441672866
 				</p>
 				<p class="mb-3 lg:mb-4">
-					<strong>Verbraucherstreitbeilegung/Universalschlichtungsstelle</strong><br />
-					Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
-					Verbraucherschlichtungsstelle teilzunehmen.
+					<strong>Consumer Dispute Resolution / Universal Arbitration Board</strong><br />
+					We are neither willing nor obligated to participate in dispute resolution proceedings
+					before a consumer arbitration board.
 				</p>
 				<p class="mb-3 lg:mb-4">
-					<strong>Zentrale Kontaktstelle nach dem Digital Services Act (DSA)</strong><br />
-					Unsere zentrale Kontaktstelle für Nutzer und Behörden nach Art. 11, 12 DSA (Verordnung
-					(EU) 2022/265) erreichen Sie wie folgt:<br />
-					E-Mail: info@florianbecker.eu
+					<strong>Central Contact Point under the Digital Services Act (DSA)</strong><br />
+					Our central contact point for users and authorities pursuant to Art. 11, 12 DSA
+					(Regulation (EU) 2022/265) can be reached as follows:<br />
+					Email: info@florianbecker.eu
 				</p>
 				<p class="mb-3 lg:mb-4">
-					<strong>Sonstige Kontaktwege</strong><br />
-					Post:<br />
+					<strong>Other Contact Channels</strong><br />
+					Mail:<br />
 					Postfach 10 02 02<br />
 					44702 Bochum
 				</p>
 				<p class="mb-0">
-					<strong>Sprachen</strong><br />
-					Die für den Kontakt zur Verfügung stehenden Sprachen sind: Deutsch, Englisch.
+					<strong>Languages</strong><br />
+					The languages available for communication are: German, English.
 				</p>
 			</div>
 		</div>

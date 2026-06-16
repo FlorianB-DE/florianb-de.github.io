@@ -1,5 +1,12 @@
 [
 	{
+		"start": "2026-02",
+		"title": "MediClip",
+		"description": "Platform connecting professional video creators and medical practices — browse, book, and organize clips into waiting-room playlists on MediClip devices.",
+		"url": "https://app.mediclip.net/about",
+		"category": "work"
+	},
+	{
 		"date": "2025-10",
 		"title": "BIM-Portal Hackathon",
 		"description": "1st place in Berlin with team ScrumMasters — AI-based BIM model checking CoPilot.",
@@ -7,29 +14,30 @@
 		"category": "education"
 	},
 	{
-		"date": "2025-02",
+		"date": "2025-01",
 		"title": "Bachelor thesis",
-		"description": "Automated SBoM generation and evaluation across 714 GitHub repos (grade 1.3).",
+		"description": "Automated SBoM generation and evaluation across 714 GitHub repos.",
 		"url": "https://blog.florianbecker.eu/2025/02/01/BachelorThesis.html",
 		"category": "education"
 	},
 	{
-		"date": "2025",
+		"date": "2025-02",
 		"title": "B.Sc. Applied Computer Science",
-		"description": "Graduated from Ruhr-Universität Bochum.",
+		"description": "Graduated from Ruhr University Bochum.",
 		"category": "education"
 	},
 	{
-		"start": "2023-04",
-		"title": "OpenBIMRL",
+		"start": "2024-04",
+		"end": "2024-09",
+		"title": "Paper: Rule-based IFC validation",
 		"description": "Working student at the Chair of Computing in Engineering — rule-based IFC validation.",
-		"url": "https://blog.florianbecker.eu/2024/10/01/OpenBIMRL.html",
+		"url": "https://hdl.handle.net/11420/49658",
 		"category": "education"
 	},
 	{
 		"start": "2019-10",
 		"end": "2025",
-		"title": "Ruhr-Universität Bochum",
+		"title": "Ruhr University Bochum",
 		"description": "B.Sc. Applied Computer Science.",
 		"category": "education"
 	},
@@ -37,6 +45,13 @@
 		"start": "2020-06",
 		"title": "Q.Two Digital Solutions",
 		"description": "Working student full-stack developer with own projects and responsibilities.",
+		"category": "work"
+	},
+	{
+		"start": "2023-04",
+		"title": "Chair of Computing in Engineering - Ruhr University Bochum",
+		"description": "Working student at the Chair of Computing in Engineering - rule-based IFC validation.",
+		"url": "https://www.inf.bi.ruhr-uni-bochum.de/iib/lehrstuhl/stud_mitarbeiter/index.html.en",
 		"category": "work"
 	}
 ]
