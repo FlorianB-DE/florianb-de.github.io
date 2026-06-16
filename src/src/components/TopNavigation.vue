@@ -1,14 +1,16 @@
 <template>
 	<nav
-		class="fixed top-0 z-50 flex w-full flex-row p-2 text-white"
+		class="nav-bar fixed top-0 z-50 grid w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-2 p-2 pr-3 text-white"
 		:class="{ closed: !open }"
 		ref="nav"
 	>
-		<div class="ml-auto flex w-3/4 justify-between lg:w-full lg:justify-start">
+		<div
+			class="nav-items flex min-w-0 flex-1 justify-between gap-1 lg:w-full lg:justify-start lg:gap-0"
+		>
 			<a
 				v-for="(item, n) in items"
 				:key="item.el.id"
-				class="no-select icon mr-2 ml-2 cursor-pointer"
+				class="no-select icon mr-0 ml-0 cursor-pointer lg:mr-2 lg:ml-2"
 				@click="dispatcher(item)"
 				:style="`--item-no: ${n}`"
 			>
@@ -19,21 +21,26 @@
 				/>
 				<component
 					:is="item.icon[Number(item.active)]"
-					class="inline aspect-square w-12 align-sub opacity-100 delay-[inherit] duration-[inherit] lg:hidden"
+					class="nav-icon inline size-10 align-sub opacity-100 delay-[inherit] duration-[inherit] lg:hidden"
 				/>
 			</a>
 		</div>
-		<a class="absolute" @click="toggleMenu">
+		<button
+			type="button"
+			class="menu-toggle relative h-9 w-9 shrink-0 lg:hidden"
+			aria-label="Toggle navigation"
+			@click="toggleMenu"
+		>
 			<Bars3Icon
-				class="open btn absolute inline aspect-square w-12 align-sub transition-transform lg:hidden"
+				class="open btn absolute inset-0 m-auto aspect-square w-9 transition-transform"
 				ref="openButton"
 				:class="{ active: !open }"
 			/>
 			<XMarkIcon
-				class="close btn absolute inline aspect-square w-12 align-sub transition-transform lg:hidden"
+				class="close btn absolute inset-0 m-auto aspect-square w-9 transition-transform"
 				:class="{ active: open }"
 			/>
-		</a>
+		</button>
 	</nav>
 </template>
 
@@ -106,7 +113,8 @@ nav {
 	transform: translateX(-100vw);
 }
 
-.closed .icon > svg {
+.closed .icon > svg,
+.closed .nav-icon {
 	transition:
 		transform calc(1s * var(--time-scale-multiplier))
 			calc(160ms * var(--time-scale-multiplier) * var(--item-no)),
@@ -114,6 +122,12 @@ nav {
 			calc(160ms * var(--time-scale-multiplier) * var(--item-no));
 	transform: scale(0%);
 	opacity: 0;
+}
+
+.menu-toggle {
+	border: none;
+	background: transparent;
+	padding: 0;
 }
 
 .close:not(.active),

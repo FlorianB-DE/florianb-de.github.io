@@ -3,11 +3,8 @@
 		<div class="hero-bg" aria-hidden="true" />
 		<div class="hero-vignette" aria-hidden="true" />
 
-		<HoverBox
-			class="profile-tag top-24 left-6 z-20 duration-700 lg:top-28 lg:left-10"
-			data-in_viewport="fade-left"
-		>
-			<span class="no-select font-mono text-2xl tracking-tight lg:text-3xl">&lt;profile&gt;</span>
+		<HoverBox class="profile-tag top-28 left-10 z-20 duration-700" data-in_viewport="fade-left">
+			<span class="no-select font-mono text-3xl tracking-tight">&lt;profile&gt;</span>
 		</HoverBox>
 
 		<div class="hero-inner">
@@ -123,9 +120,16 @@ onMounted(() => {
 }
 
 .profile-tag {
+	display: none;
 	padding: 0.85rem 1.1rem;
 	backdrop-filter: blur(8px);
 	background: rgba(15, 20, 25, 0.55);
+}
+
+@media (min-width: 1024px) {
+	.profile-tag {
+		display: block;
+	}
 }
 
 .hero-copy {
@@ -299,6 +303,53 @@ onMounted(() => {
 	50% {
 		opacity: 1;
 		transform: scale(1.03);
+	}
+}
+
+@media (max-width: 1023px) {
+	.hero {
+		align-items: flex-start;
+	}
+
+	.hero-inner {
+		gap: 1.25rem;
+		padding: 5rem 1.25rem 1.25rem;
+		align-items: start;
+	}
+
+	.hero-eyebrow {
+		margin-bottom: 0.5rem;
+		font-size: 0.68rem;
+		letter-spacing: 0.1em;
+	}
+
+	.hero-title {
+		margin-bottom: 0.75rem;
+		font-size: clamp(2.1rem, 10.5vw, 2.85rem);
+		line-height: 0.92;
+	}
+
+	.hero-lead {
+		margin-bottom: 1rem;
+		font-size: 0.92rem;
+		line-height: 1.55;
+	}
+
+	.hero-cta {
+		font-size: 0.75rem;
+	}
+
+	.hero-visual {
+		width: min(100%, 16.5rem);
+		margin-top: 0.25rem;
+	}
+
+	.star-glow {
+		filter: blur(24px);
+	}
+
+	.star-caption {
+		display: none;
 	}
 }
 </style>

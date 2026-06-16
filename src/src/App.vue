@@ -2,6 +2,7 @@
 import TopNavigation from './components/TopNavigation.vue';
 import Me from './components/Me.vue';
 import Home from './components/Home.vue';
+import Imprint from './components/Imprint.vue';
 
 import { inject, onMounted, onUnmounted } from 'vue';
 import Projects from './components/Projects.vue';
@@ -48,6 +49,8 @@ onUnmounted(() => {
 		<Me />
 		<hr />
 		<Projects />
+		<hr />
+		<Imprint />
 	</main>
 </template>
 
