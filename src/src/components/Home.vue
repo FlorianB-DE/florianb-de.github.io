@@ -21,7 +21,7 @@
 				</p>
 				<a
 					class="hero-cta"
-					href="https://blog.florianbecker.eu/a-star-in-unreal-engine-4/2023/04/03/UE4StarMat.html"
+					href="https://blog.florianbecker.eu/a/star/in/unreal/engine/4/2023/04/03/UE4StarMat.html"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
